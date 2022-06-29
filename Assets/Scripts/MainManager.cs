@@ -90,6 +90,8 @@ public class MainManager : MonoBehaviour
 
     public void GameOver()
     {
+        updateBestScore();
+        MenuManager.Instance.LoadBestScore();
         m_GameOver = true;
         GameOverText.SetActive(true);
     }
@@ -97,5 +99,7 @@ public class MainManager : MonoBehaviour
     public void ReturnToMenu()
     {
         SceneManager.LoadScene(0);
+        updateBestScore();
+        MenuManager.Instance.LoadBestScore();
     }
 }

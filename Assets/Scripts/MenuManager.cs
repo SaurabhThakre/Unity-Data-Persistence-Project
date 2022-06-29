@@ -42,7 +42,7 @@ public class MenuManager : MonoBehaviour
         SaveData data = new SaveData();
         data.Name = Name;
         data.Score = Score;
-
+ 
         string json = JsonUtility.ToJson(data);
 
         File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
@@ -59,17 +59,6 @@ public class MenuManager : MonoBehaviour
             loadName = data.Name;
             loadScore = data.Score;
         }
-    }
-
-    public void DeleteBestScore()
-    {
-        SaveData data = new SaveData();
-        data.Name = null;
-        data.Score = 0;
-
-        string json = JsonUtility.ToJson(data);
-
-        File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
     }
 
 }

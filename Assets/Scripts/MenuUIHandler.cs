@@ -38,6 +38,14 @@ public class MenuUIHandler : MonoBehaviour
 
     }
 
+    public void ResetBestScore()
+    {
+        MenuManager.Instance.Name = "Name";
+        MenuManager.Instance.Score = 0;
+        MenuManager.Instance.SaveBestScore();
+        MenuManager.Instance.LoadBestScore();
+    }
+
     public void UpdateBestScore()
     {
         bestscoreDetails.text = "Best Score : " + MenuManager.Instance.loadName + " : " + MenuManager.Instance.loadScore;
